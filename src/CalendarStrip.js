@@ -346,7 +346,7 @@ class CalendarStrip extends Component {
       let date;
       if (props.useIsoWeekday) {
         // isoWeekday starts from Monday
-        date = me.setLocale(startingDate.clone().isoWeekday(i + 1));
+        date = me.setLocale(startingDate.startOf('day').clone().isoWeekday(i + 1).add(3, "hours"));
       } else {
         date = me.setLocale(startingDate.clone().add(i, "days"));
       }
